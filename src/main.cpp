@@ -96,7 +96,7 @@ main(int argc, char *argv[])
 {
         QCoreApplication::setApplicationName("nheko");
         QCoreApplication::setApplicationVersion(nheko::version);
-        QCoreApplication::setOrganizationName("nheko");
+        QCoreApplication::setOrganizationName("nheko.deathmist");
         QCoreApplication::setAttribute(Qt::AA_DontCreateNativeWidgetSiblings);
         QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
         QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
