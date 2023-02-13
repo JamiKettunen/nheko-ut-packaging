@@ -1,0 +1,15 @@
+{
+    "name": "nheko.deathmist",
+    "title": "nheko",
+    "version": "0.8.2",
+    "description": "Desktop client for the Matrix protocol",
+    "architecture": "@CLICK_ARCH@",
+    "framework": "ubuntu-sdk-20.04",
+    "maintainer": "Jami Kettunen <jami.kettunen@protonmail.com>",
+    "hooks": {
+        "nheko": {
+            "apparmor": "nheko.apparmor",
+            "desktop": "nheko.desktop"
+        }
+    }
+}

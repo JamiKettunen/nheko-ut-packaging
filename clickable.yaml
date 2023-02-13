@@ -1,0 +1,47 @@
+clickable_minimum_required: 7
+
+framework: ubuntu-sdk-20.04
+
+builder: cmake
+
+build_args: "-DUSE_BUNDLED_MTXCLIENT=ON -DUSE_BUNDLED_LMDBXX=ON"
+
+dependencies_host:
+  - nlohmann-json3-dev
+
+dependencies_target:
+  - liblmdb-dev
+  - liblmdb++-dev
+  - libboost-iostreams-dev
+  - libboost-thread-dev
+  - libolm-dev
+  - libspdlog-dev
+  - libcmark-dev
+  - qt5keychain-dev
+
+install_root_data:
+  - manifest.json
+  - resources/nheko.desktop
+  - nheko.apparmor
+
+install_data:
+  resources/nheko.svg: .
+
+install_lib:
+  - /usr/lib/${ARCH_TRIPLET}/libcmark.so*
+  - /usr/lib/${ARCH_TRIPLET}/libspdlog.so*
+  - /usr/lib/${ARCH_TRIPLET}/libQt5QuickWidgets.so*
+  - /usr/lib/${ARCH_TRIPLET}/libolm.so*
+  - /usr/lib/${ARCH_TRIPLET}/libqt5keychain.so*
+
+# FIXME: cannot login...
+# Feb 13 20:30:14 ubuntu-phablet aa-exec[11891]: [2023-02-13 20:30:14.711] [net] [info] Autodiscovery: Discovered 'https://matrix.fairydust.space'
+# Feb 13 20:30:14 ubuntu-phablet aa-exec[11891]: terminate called after throwing an instance of 'std::invalid_argument'
+# Feb 13 20:30:14 ubuntu-phablet aa-exec[11891]:   what():  v1.1: invalid version
+# Feb 13 20:30:14 ubuntu-phablet systemd[2726]: lomiri-app-launch--application-click--nheko.deathmist_nheko_0.8.2--.service: Main process exited, code=killed, status=6/ABRT
+
+# TODO: VoIP support via GStreamer stuff; package deps are cursed!
+
+# TODO: exclude stuff from click:
+# - include (CMAKE_INSTALL_INCLUDEDIR) | https://github.com/Nheko-Reborn/mtxclient/blob/v0.3.0/CMakeLists.txt#L293
+# - lib/cmake
