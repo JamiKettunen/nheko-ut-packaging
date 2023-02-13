@@ -121,3 +121,6 @@ package.dir
 
 # Archives
 *.bz2
+
+# Clickable container configs
+/.clickable/
