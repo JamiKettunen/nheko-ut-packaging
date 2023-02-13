@@ -99,7 +99,7 @@ main(int argc, char *argv[])
         QCoreApplication::setOrganizationName("nheko.deathmist");
         QCoreApplication::setAttribute(Qt::AA_DontCreateNativeWidgetSiblings);
         QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
-        QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+        //QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
         // this needs to be after setting the application name. Or how would we find our settings
         // file then?
