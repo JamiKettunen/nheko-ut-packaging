@@ -671,8 +671,8 @@ endif()
 
 set_target_properties(nheko PROPERTIES SKIP_BUILD_RPATH TRUE)
 
-if(UNIX AND NOT APPLE)
-	install (TARGETS nheko RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}")
+install (TARGETS nheko RUNTIME DESTINATION ".")
+if(FALSE)
 	install (FILES "resources/nheko-16.png" DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/16x16/apps" RENAME "nheko.png")
 	install (FILES "resources/nheko-32.png" DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/32x32/apps" RENAME "nheko.png")
 	install (FILES "resources/nheko-48.png" DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/48x48/apps" RENAME "nheko.png")
